@@ -19,3 +19,18 @@ print(persons)
 # modify the code in the Table class so that it supports the insert operation where an entry can be added to a list of dictionary
 
 # modify the code in the Table class so that it supports the update operation where an entry's value associated with a key can be updated
+
+
+class Database:
+    def __init__(self):
+        self.database = []
+
+    def insert(self, table):
+        self.database.append(table)
+
+    def find_table(self, table_name):
+        for table in self.database:
+            if table.name == table_name:
+                return table
+        return None
+

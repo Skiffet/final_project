@@ -1,34 +1,52 @@
 # import database module
 
 # define a funcion called initializing
+# import database module
+
+# define a function called initializing
+
+import csv
+from database import Table, Database
+
+database = Database()
+
+
+def data_file(file):
+    with open(file) as variable:
+        data = []
+        for new_data in csv.DictReader(variable):
+            data.append(new_data)
+        return data
+
 
 def initializing():
-    pass
+    table = Table('persons', data_file('persons.csv'))
+    table2 = Table('login', data_file('login.csv'))
+    database.insert(table)
+    database.insert(table2)
 
-# here are things to do in this function:
-
-    # create an object to read all csv files that will serve as a persistent state for this program
-
-    # create all the corresponding tables for those csv files
-
-    # see the guide how many tables are needed
-
-    # add all these tables to the database
-
-
-# define a funcion called login
 
 def login():
-    pass
+    user_name = input("Enter user name: ")
+    password = input("Enter password: ")
+    for name in data_file('login.csv'):
+        if user_name in name.values() and password in name.values():
+            return [name['ID'], name['role']]
+    return None
 
-# here are things to do in this function:
-   # add code that performs a login task
-        # ask a user for a username and password
-        # returns [ID, role] if valid, otherwise returning None
 
-# define a function called exit
-def exit():
-    pass
+def exit(output_file):
+    table_name = 'person'  # Replace with the actual table name
+    table = database.find_table(table_name)
+    if table:
+        with open(output_file, mode='w', newline='') as csv_file:
+            csv_writer = csv.writer(csv_file)
+            csv_writer.writerow(table.table[0].keys())
+            for row in table.table:
+                csv_writer.writerow(row.values())
+
+
+
 
 # here are things to do in this function:
    # write out all the tables that have been modified to the corresponding csv files
@@ -58,4 +76,4 @@ val = login()
     # see and do advisor related activities
 
 # once everyhthing is done, make a call to the exit function
-exit()
+exit('output_file')

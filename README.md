@@ -1,4 +1,27 @@
 # Final project for 2023's 219114/115 Programming I
+| Role      | Action                     | Method                  | Class     | Completion %   |
+|-----------|----------------------------|-------------------------|-----------|----------------|
+| admin     | update row in table        | update                  | Table     | 100%           |
+| admin     | append row                 | insert                  | Table     | 100%           |
+| admin     | show function              | update                  | Admin     | 100%           |
+| admin     | update function            | new_data                | Admin     | 100%           |
+| member    | show choice                | show_choice             | Member    | 100%           |
+| member    | show project information   | show_project            | Member    | 100%           |
+| member    | show response request      | show response request   | Member    | 100%           |
+| lead      | select choice              | show function           | Lead      | 100%           |
+| lead      | create new project         | create_project          | Lead      | 50%            |
+| lead      | send invitation            | send_invitation         | Lead      | 50%            |
+| lead      | add member                 | add_member              | Lead      | 10%            |
+| lead      | add advisor                | add_advisor             | Lead      | 10%            |
+| lead      | submit project             | submit_project          | Lead      | 0%             |
+| advisor   | select function            | select_function         | Advisor   | 0%             |
+| lead      |                            | create_project          | Lead      | 0%             |
+| lead      |                            | send_invitation         | Lead      | 0%             |
+| faculty   |                            | create_project          | Lead      | 0%             |
+| lead      |                            | send_invitation         | Lead      | 0%             |
+| --------- | -------------------------- | ----------------------- | --------- | -------------- |
+
+
 * Starting files for part 1
   - database.py
   - project_manage.py
@@ -69,26 +92,6 @@ and approving projects.
 - Approve projects
 
 
-| Role    | Action                   | Method                | Class   | Completion % |
-|---------|--------------------------|-----------------------|---------|--------------|
-| admin   | update row in table      | update                | Table   | 100%         |
-| admin   | append row               | insert                | Table   | 100%         |
-| admin   | show function            | update                | Admin   | 100%         |
-| admin   | update function          | new_data              | Admin   | 100%         |
-| member  | show choice              | show_choice           | Member  | 100%         |
-| member  | show project information | show_project          | Member  | 100%         |
-| member  | show response request    | show response request | Member  | 100%         |
-| lead    | select choice            | show function         | Lead    | 100%         |
-| lead    | create new project       | create_project        | Lead    | 50%          |
-| lead    | send invitation          | send_invitation       | Lead    | 50%          |
-| lead    | add member               | add_member            | Lead    | 10%          |
-| lead    | add advisor              | add_advisor           | Lead    | 10%          |
-| lead    | submit project           | submit_project        | Lead    | 0%           |
-| advisor | select function          | select_function       | Advisor | 0%           |
-| lead    |                          | create_project        | Lead    | 30%          |
-| lead    |                          | send_invitation       | Lead    | 10%          |
-| faculty |                          | create_project        | Lead    | 30%          |
-| lead    |                          | send_invitation       | Lead    | 10%          |
 
 
 

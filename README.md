@@ -42,8 +42,8 @@ managing members, and interacting with advisors.
 
 * member.py
 -The `member.py` script is part of the project's member module. It provides functionality 
-* for members to interact with projects and view response requests. Members can view projects
-* they are part of and see response requests related to those projects.
+for members to interact with projects and view response requests. Members can view projects
+they are part of and see response requests related to those projects.
 
 - Function
   - show_choice
@@ -120,6 +120,32 @@ and approving projects.
 - View details of all projects
 - Evaluate projects (missing step, explained in the proposal)
 - Approve projects
+
+: admin.py
+- class Admin
+The Admin class provides functionality to update data in various tables within the database. 
+It allows the admin to select the table to update and specify the data to be modified.
+
+: member.py
+- class Member
+The Member class represents a member in a project management system. 
+This class provides methods for members to interact with project-related information, such as displaying projects and response requests.
+
+: student.py
+- class Student
+The Student class represents a student in a project management system. This class provides methods for students to interact with project-related information, 
+such as showing invitations, creating projects, and more.
+
+: lead_student.py
+- class Lead
+The Lead class represents a lead student in a project management system. 
+This class provides methods for lead students to perform various actions related to project management, 
+such as creating a project, finding members, sending invitations, adding members and advisors to the project, submitting the final project report, and more.
+
+: advisor_pendind.py
+- class Advisor
+The Advisor class represents an advisor in a project management system. 
+The advisor has the capability to view project requests and send acceptance responses to project leaders.
 
 
 * missing advisor and faculty. iam really sorry.

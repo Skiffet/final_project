@@ -76,11 +76,7 @@ elif val[1] == "member":
 
 elif val[1] == "lead":
     lead = Lead(val[0], database)
-    lead.find_member()
     lead.show_function()
-    lead.create_project()
-    lead.show_member()
-    lead.sent_invitation()
 
 elif val[1] == 'faculty':
     pass

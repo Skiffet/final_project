@@ -32,9 +32,18 @@ class Table:
         """Filter the table using the given condition."""
         filtered_table = Table(f"{self.table_name}_filtered", [])
         for row in self.rows:
-            if condition(row.data):
+            if condition(row):
                 filtered_table.rows.append(row)
         return filtered_table
+
+    def join(self, other_table, my_key, another_key):
+        """Join the table with another table using the given key."""
+        joined_table = Table(f"{self.table_name}_joined", [])
+        for row in self.rows:
+            for other_row in other_table.rows:
+                if row[my_key] == other_row[another_key]:
+                    joined_table.rows.append({**row, **other_row})
+        return joined_table
 
     def aggregate(self, function, aggregation_key):
         """Aggregate the table using the given function."""

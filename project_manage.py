@@ -7,8 +7,12 @@
 
 import csv
 from database import Table, Database
+from admin import Admin
+from lead_student import Lead
+from member import Member
 
 database = Database()
+admin = Admin()
 
 
 def data_file(file):
@@ -22,8 +26,16 @@ def data_file(file):
 def initializing():
     table = Table('persons', data_file('persons.csv'))
     table2 = Table('login', data_file('login.csv'))
+    table3 = Table('advisor', data_file('Advisor_pending_request.csv'))
+    table4 = Table('member', data_file('Member_pending_request.csv'))
+    table5 = Table('project', data_file('Project_table.csv'))
+
+
     database.insert(table)
     database.insert(table2)
+    database.insert(table3)
+    database.insert(table4)
+    database.insert(table5)
 
 
 def login():
@@ -59,21 +71,41 @@ def exit(output_file):
 
 initializing()
 val = login()
-
 # based on the return value for login, activate the code that performs activities according to the role defined for that person_id
 
-# if val[1] = 'admin':
+if val[1] == 'admin':
+    admin.update(database)
+    admin.new_data()
+
     # see and do admin related activities
-# elif val[1] = 'student':
-    # see and do student related activities
-# elif val[1] = 'member':
-    # see and do member related activities
-# elif val[1] = 'lead':
-    # see and do lead related activities
-# elif val[1] = 'faculty':
-    # see and do faculty related activities
-# elif val[1] = 'advisor':
-    # see and do advisor related activities
+elif val[1] == 'student':
+
+    pass
+#     # see and do student related activities
+elif val[1] == 'member':
+    member = Member(
+        val[0],
+        database.find_table("project"),
+        database.find_table('member'),
+        database.find_table('persons'),
+    )
+    member.show_choice()
+
+     # see and do member related activities
+elif val[1] == 'lead':
+    lead = Lead(val[0], database)
+    lead.find_member()
+    lead.show_function()
+    lead.create_project()
+    lead.show_member()
+    lead.sent_invitation()
+
+
+#     see and do lead related activities
+# elif val[1] == 'faculty':
+#     see and do faculty related activities
+# elif val[1] == 'advisor':
+#     see and do advisor related activities
 
 # once everyhthing is done, make a call to the exit function
 exit('output_file')

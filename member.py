@@ -48,3 +48,5 @@ class Member:
         for project in self.project_table.rows:
             if project["ID"] in my_project:
                 print(f"Leader: {project['Lead']}, Title: {project['Title']}, Status: {project['Status']}")
+
+

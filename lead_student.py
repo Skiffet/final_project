@@ -14,7 +14,8 @@ class Lead:
                 print("3. Send invitation to person")
                 print("4. Add member to project")
                 print("5. Add advisor to project")
-                print("3. Exit")
+                print("6. Submit project")
+                print("7. Exit")
                 select = int(input("Select : "))
                 if not isinstance(select, int):
                     print("Please enter a valid answer.")
@@ -23,6 +24,13 @@ class Lead:
                 elif select == 2:
                     self.show_member()
                 elif select == 3:
+                    self.sent_invitation()
+                elif select == 4:
+                    self.add_member()
+                elif select == 5:
+                    self.add_advisor()
+                elif select == 6:
+
                     break
             except ValueError:
                 print("Please enter a number.")
@@ -140,6 +148,15 @@ class Lead:
                       f"Status: {project['Status']}")
                 print("Advisor added successfully.")
                 print(" ")
+
+    # def submit_project(self):
+    #    while True:
+    #        Y = input("Do you want to submit project? (Y)es \ (N)o: ").upper()
+    #             if Y == "Y":
+    #                 pass
+
+
+
 
 
 

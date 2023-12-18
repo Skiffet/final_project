@@ -8,17 +8,17 @@
 | member    | show choice                | show_choice             | Member    | 100%           |
 | member    | show project information   | show_project            | Member    | 100%           |
 | member    | show response request      | show response request   | Member    | 100%           |
-| lead      | select choice              | show function           | Lead      | 100%           |
+| lead      | select choice              | show_function           | Lead      | 100%           |
 | lead      | create new project         | create_project          | Lead      | 50%            |
 | lead      | send invitation            | send_invitation         | Lead      | 50%            |
-| lead      | add member                 | add_member              | Lead      | 10%            |
-| lead      | add advisor                | add_advisor             | Lead      | 10%            |
-| lead      | submit project             | submit_project          | Lead      | 0%             |
-| advisor   | select function            | select_function         | Advisor   | 0%             |
-| lead      |                            | create_project          | Lead      | 0%             |
-| lead      |                            | send_invitation         | Lead      | 0%             |
-| faculty   |                            | create_project          | Lead      | 0%             |
-| lead      |                            | send_invitation         | Lead      | 0%             |
+| lead      | add member                 | add_member              | Lead      | 80%            |
+| lead      | add advisor                | add_advisor             | Lead      | 80%            |
+| lead      | submit project             | submit_project          | Lead      | 90%            |
+| advisor   | select function            | select_function         | Advisor   | 10%            |
+| lead      | find leader name           | find_leader_name        | Lead      | 100%           |
+| lead      | find id project            | id_project              | Lead      | 100%           |
+| lead      | show message response      | message_response_status | Lead      | 100%           |
+| lead      | change project status      | change_project_status   | Lead      | 100%           |
 | --------- | -------------------------- | ----------------------- | --------- | -------------- |
 
 
@@ -90,6 +90,9 @@ and approving projects.
 - View details of all projects
 - Evaluate projects (missing step, explained in the proposal)
 - Approve projects
+
+
+* missing advisor and faculty. iam really sorry.
 
 
 

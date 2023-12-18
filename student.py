@@ -1,12 +1,19 @@
+"""Module for student class"""
 from database import Table, Database
-class student:
-    def __init__(self,id, database):
-        self.project_table: Table = database.find_table("project")
-        self.member_table: Table = database.find_table("person")
-        self.id = id
 
+
+class Student:
+    """Class representing a student."""
+
+    def __init__(self, _id, database):
+        """Initialize the student."""
+        self.project_table = database.find_table("project")
+        self.member_table = database.find_table("member_pending")
+        self.id = _id
+        self.person_table = database.find_table("persons")
 
     def show_student_function(self):
+        """Show the student function."""
         while True:
             try:
                 print("1. Show invitational message")
@@ -25,19 +32,45 @@ class student:
                 print("Please enter a number.")
                 print(" ")
 
-
-    def find_member(self): # หาชื่อของ lead
+    def find_member(self):  # Find Lead Name
+        """Find the name of the lead."""
         for member in self.member_table.rows:
             if self.id == member['ID']:
                 return member['first'] + ' ' + member['last']
 
-    def id_project(self): # หา id ของ project
+    def id_project(self):  # Find ID of Project
+        """Find the ID of the project."""
         for member in self.member_table.rows:
             if self.id == member['Lead']:
                 return member["ID"]
 
     def show_invitation(self):
-        pass
+        my_name = ""
+        for p in self.person_table.rows:
+            if p['ID'] == self.id:
+                my_name = p['first'] + ' ' + p['last']
+        no_message = True
+        for request in self.member_table.rows:
+            if request['to_be_member'] == my_name \
+                    and 'Pending' == request['Response']:
+                print(f"Project ID: {request['ID']} want you to be a member.")
+                no_message = False
+                while True:
+                    select = input("Would you like to accept? (Y/N): ").upper()
+                    if select == "Y":
+                        self.member_table.update(request['ID'], 'Response',
+                                                 'Approved')
+                        print("The message has been sent "
+                              "to the project leader.")
+                        break
+                    elif select == "N":
+                        self.member_table.update(request['ID'], 'Response', 'Reject')
+                        print("You are not a member of this project.")
+                        break
+                    else:
+                        print("Please enter a valid answer.\n")
+        if no_message:
+            print("You have no messages.")
 
     def accept_invitation(self):
         pass

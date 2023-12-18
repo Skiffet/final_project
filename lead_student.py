@@ -123,7 +123,6 @@ class Lead:
                 print("Member added successfully.")
                 print(" ")
 
-
     def add_advisor(self):
         global project
         id_project = self.id_project()

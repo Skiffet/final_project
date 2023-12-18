@@ -31,8 +31,11 @@
 functionality for administrative tasks related to project management, such as creating projects, 
 managing members, and interacting with advisors.
 
+- Function
+  - new_data
+
 #Features
-- Create a new project
+- Update or change data in all csv.
 - Manage project members
 - Interact with potential advisors
 - Perform administrative tasks related to project management
@@ -42,13 +45,28 @@ managing members, and interacting with advisors.
 * for members to interact with projects and view response requests. Members can view projects
 * they are part of and see response requests related to those projects.
 
+- Function
+  - show_choice
+  - convert_to_name
+  - show_project
+  - show_response_request
+
 #Features
 - Show projects a member is part of
 - Show response requests for the member's projects
 
-* student
+* student.py
 -The student-invitation module allows students to manage project invitations, respond to invitations,
 and interact with their assigned projects.
+
+- Function
+  - show_student_function
+  - find_name
+  - find_member
+  - id_project
+  - show_invitation
+  - create_project
+
 
 # Features
 - View and respond to project invitations from leads
@@ -58,6 +76,18 @@ and interact with their assigned projects.
 * lead_student.py
 -The lead student module facilitates project management for lead students. It includes features to create, 
 manage, and complete projects effectively.
+
+- Function
+  - show_function
+  - create_project
+  - find_leader_name
+  - show_member
+  - id_project
+  - sent_invitation
+  - add_member
+  - add_advisor
+  - submit_project
+
 
 # Features
 - Create a new project
